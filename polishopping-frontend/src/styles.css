@@ -1,0 +1,52 @@
+:root { --bg:#f5f7f9; --fg:#16212b; --mut:#5a6874; --card:#fff; --linha:#d8dfe5; --ac:#0b6e6e; --ok:#17703a; --erro:#a4301f; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#10171d; --fg:#e8edf1; --mut:#9aa8b3; --card:#192229; --linha:#2c3943; --ac:#5fc9c4; --ok:#6fd194; --erro:#ff9a8a; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 980px; margin: auto; padding: 16px; }
+a { color: var(--ac); }
+h1 { font-size: 1.6rem; margin: 8px 0 12px; }
+.topo { background: var(--card); border-bottom: 1px solid var(--linha); }
+.topo nav { max-width: 980px; margin: auto; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.topo a { text-decoration: none; color: var(--fg); }
+.topo a.active { color: var(--ac); font-weight: 600; }
+.logo { font-weight: 700; color: var(--ac) !important; font-size: 1.1rem; }
+.espaco { flex: 1; }
+.card { background: var(--card); border: 1px solid var(--linha); border-radius: 10px; padding: 14px; margin: 10px 0; }
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.grade .card { margin: 0; }
+.anuncio { text-decoration: none; color: inherit; display: block; }
+.anuncio img, .fotos img { width: 100%; max-height: 180px; object-fit: cover; border-radius: 8px; }
+.fotos { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; }
+.foto { display: flex; flex-direction: column; gap: 6px; }
+.mut { color: var(--mut); margin: 4px 0; }
+.filtros { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; }
+.filtros input, .filtros select { flex: 1 1 150px; }
+.form { display: flex; flex-direction: column; gap: 12px; max-width: 560px; }
+.form label, .filtros label { display: flex; flex-direction: column; gap: 4px; font-size: .92rem; }
+label.inline { flex-direction: row; display: inline-flex; gap: 6px; margin-right: 12px; }
+input, select, textarea, button { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--linha); background: var(--card); color: var(--fg); }
+textarea { min-height: 90px; }
+button { background: var(--ac); border-color: var(--ac); color: var(--bg); cursor: pointer; font-weight: 600; }
+button.sec { background: transparent; color: var(--ac); }
+button.perigo { background: transparent; color: var(--erro); border-color: var(--erro); }
+button:disabled { opacity: .45; cursor: default; }
+:focus-visible { outline: 3px solid var(--ac); outline-offset: 2px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0; }
+.linha { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; align-items: center; }
+.erro { color: var(--erro); } .ok { color: var(--ok); }
+.selo { font-size: .78rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--linha); color: var(--mut); white-space: nowrap; }
+.selo.ativo, .selo.aceita, .selo.concluida, .selo.concluido { color: var(--ok); border-color: var(--ok); }
+.selo.removido, .selo.recusada, .selo.pendente_moderacao { color: var(--erro); border-color: var(--erro); }
+.paginacao { display: flex; gap: 12px; align-items: center; justify-content: center; margin: 16px 0; }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; }
+dt { color: var(--mut); } dd { margin: 0; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 10px 0; }
+.kpis .card { margin: 0; display: flex; flex-direction: column; } .kpis b { font-size: 1.6rem; }
+.barra { display: grid; grid-template-columns: 110px 1fr 28px; gap: 8px; align-items: center; margin: 6px 0; font-size: .9rem; }
+.barra div { background: var(--linha); border-radius: 6px; height: 12px; overflow: hidden; }
+.barra i { display: block; height: 100%; background: var(--ac); }
+.tabela { overflow-x: auto; } table { border-collapse: collapse; width: 100%; }
+th, td { border-bottom: 1px solid var(--linha); padding: 6px 8px; text-align: left; }
+@media (max-width: 600px) { .barra { grid-template-columns: 80px 1fr 24px; } dl { grid-template-columns: 1fr; } }
